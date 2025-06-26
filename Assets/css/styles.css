@@ -1,0 +1,420 @@
+:root {
+    /* colores base*/
+    --base: #fffaf5;
+    --colorPrincipal: #c7a97f;
+    --colorPrincipalClaro: #cbb882;
+    --colorPrincipalOscuro: #baa172;
+    --colorSecundario: #8a6d46;
+    --colorSecundarioClaro: #92754e;
+    --colorSecundarioOscuro: #725631;
+    --colorComplementario: #5a7d59;
+    --colorComplementarioClaro: #7a9f79;
+    --colorComplementarioOscuro: #4a6c49;
+    --colorComplementarioHover: #3e5c3d;
+    --colorComplementarioClaroHover: #6a8f69;
+    --colorComplementarioOscuroHover: #3d5b3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ************************ */
+/* * ESTILOS LANDING PAGE * */
+/* ************************ */
+
+body {
+    background-color: var(--base);
+}
+
+header {
+    background: linear-gradient(to bottom, var(--colorPrincipalClaro), var(--colorPrincipalOscuro));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+header img {
+    height: 5rem;
+    width: 5rem;
+    margin-left: 1rem;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+header nav ul li {
+    list-style: none;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: ease-in-out 0.3s
+}
+
+header nav ul li a:hover {
+    color: var(--colorComplementario);
+}
+
+.heroSection {
+    position: relative;
+    height: 37.5rem;
+    overflow: hidden;
+}
+
+.heroSection img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.heroSection .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.incentivoFormulario {
+    text-align: center;
+    margin: 1rem;
+}
+
+.heroSection h1 {
+    position: absolute;
+    top: 18rem;
+    left: 32rem;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 0 1.25rem;
+    font-size: 2rem;
+}
+
+.espacio {
+    display: block;
+}
+
+.separadorDeContenido {
+    height: 0.375rem;
+    border-radius: 1.25rem;
+    background: linear-gradient(to right, var(--colorComplementarioClaro), var(--colorComplementarioOscuro));
+    width: 30%;
+    margin: 1rem auto;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.beneficiosCooperativa {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorPrincipal);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.beneficiosCooperativa .icono {
+    background-color: var(--colorSecundario);
+    border-radius: 100%;
+    width: 8.125rem;
+    height: 8.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.beneficiosCooperativa:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.beneficiosCooperativa button {
+    background-color: var(--colorComplementario);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    color: white;
+    margin-top: 1rem;
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 0.625rem;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.beneficiosCooperativa button:hover {
+    background-color: white;
+    color: var(--colorComplementario);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#informacionYRegistro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: linear-gradient(to top left, var(--colorPrincipalClaro), var(--colorSecundarioOscuro));
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.informacionContacto,
+.informacionContacto h3,
+.informacionContacto h4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informacionContacto h3,
+.informacionContacto h4 {
+    align-items: center;
+}
+
+.informacionContacto h3 {
+    color: white;
+    margin: 0 0 1rem 96px;
+    font-size: 3rem;
+}
+
+.informacionContacto h4 {
+    color: white;
+    margin: 0 0 1rem 124px;
+    font-size: 1.2rem;
+}
+
+.informacionContacto ul li {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 6.75rem;
+}
+
+.informacionContacto ul li span {
+    margin: 1rem;
+    background-color: rgba(220, 220, 220, 0.3);
+    padding: 0.5rem;
+    border-radius: 100%;
+}
+
+#formLanding {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorPrincipal);
+    border-radius: 0.375rem;
+    padding: 1rem 2rem;
+    margin: 0 auto 0.625rem auto;
+    justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.nombreYApellido {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.5rem;
+}
+
+#formLanding div h2 {
+    color: var(--colorComplementario);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#formLanding label {
+    color: var(--colorComplementario);
+    font-weight: bolder;
+    margin: 0.5rem 0 0.125rem 0;
+}
+
+#formLanding input {
+    background-color: rgb(231, 231, 231);
+    border-radius: 0.75rem;
+    height: 2.5rem;
+    border: 0.125rem solid rgb(136, 136, 136);
+    color: grey;
+}
+
+#formLanding button {
+    margin: 0.75rem;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    background-color: var(--colorComplementario);
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#formLanding button:hover {
+    background-color: white;
+    color: var(--colorComplementario);
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+footer {
+    background: linear-gradient(to top, var(--colorPrincipalClaro), var(--colorPrincipalOscuro));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 5rem;
+}
+
+.informacionYRedes ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem 2rem;
+}
+
+.informacionYRedes ul li {
+    list-style: none;
+    padding: 0.375rem;
+}
+
+.informacionYRedes ul li a img {
+    height: 1.6rem;
+    width: 1.6rem;
+}
+
+.informacionYRedes p {
+    color: white;
+    font-size: 1.25rem;
+    margin: 0.625rem;
+}
+
+.enlacesRapidos h2 {
+    color: var(--colorComplementarioOscuro);
+}
+
+.enlacesRapidos ul {
+    list-style: none;
+}
+
+.enlacesRapidos ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.enlacesRapidos ul li a span {
+    color: var(--colorComplementarioOscuro);
+    font-weight: bolder;
+    transition: ease-in-out 0.3s;
+}
+
+.enlacesRapidos ul li a:hover {
+    color: var(--colorComplementarioOscuro);
+    margin-left: 0.2rem;
+    transition: ease-in-out 0.3s;
+}
+
+.contactoFooter {
+    margin-right: 1rem;
+}
+
+.contactoFooter h2 {
+    color: var(--colorComplementarioOscuro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactoFooter ul {
+    list-style: none;
+}
+
+.contactoFooter ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* ************************ */
+/* *     ESTILOS LOGIN    *  */
+/* ************************ */
+
+#formLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorPrincipal);
+    border-radius: 0.375rem;
+    padding: 1rem 2rem;
+    margin: 0 auto 0.625rem auto;
+    justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.nombreYApellido {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.5rem;
+}
+
+#formLogin div h2 {
+    color: var(--colorComplementario);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#formLogin label {
+    color: var(--colorComplementario);
+    font-weight: bolder;
+    margin: 0.5rem 0 0.125rem 0;
+}
+
+#formLogin input {
+    background-color: rgb(231, 231, 231);
+    border-radius: 0.75rem;
+    height: 2.5rem;
+    border: 0.125rem solid rgb(136, 136, 136);
+    color: grey;
+}
+
+#formLogin button {
+    margin: 0.75rem;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    background-color: var(--colorComplementario);
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#formLogin button:hover {
+    background-color: white;
+    color: var(--colorComplementario);
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
