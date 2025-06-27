@@ -21,10 +21,13 @@
     </header>
 
     <form id="formLogin" action="">
-        <label for="">Correo</label>
-        <input type="email">
-        <label for="">Contraseña</label>
-        <input type="password">
+        <label for="">Correo Electronico:</label>
+        <input required name="" id="" type="email" placeholder="ejemplo@gmail.com"
+            title="Ingrese su correo electronico">
+        <label for="">Contraseña:</label>
+        <input required type="password" placeholder="********"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_])[A-Za-z\d\-_]{8,}$"
+            title=" La contraseña debe tener 6 caracteres como minimo, incluyendo una letra y un número">
         <button>Iniciar Sesion</button>
     </form>
 
@@ -36,8 +39,9 @@
             <ul>
                 <li><a href="https://facebook.com" target="_blank"><img src="../../Assets/img/facebook-svgrepo-com.svg"
                             alt="Facebook" width="30px" height="30px"></a></li>
-                <li><a href="https://instagram.com" target="_blank"><img src="../../Assets/img/instagram-svgrepo-com.svg"
-                            alt="Instagram" width="30px" height="30px"></a></li>
+                <li><a href="https://instagram.com" target="_blank"><img
+                            src="../../Assets/img/instagram-svgrepo-com.svg" alt="Instagram" width="30px"
+                            height="30px"></a></li>
                 <li><a href="https://x.com" target="_blank"><img src="../../Assets/img/xLogo.svg" alt="X" width="30px"
                             height="30px"></a></li>
             </ul>

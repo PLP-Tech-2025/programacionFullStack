@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,10 +43,8 @@
             <span class="icono"> <img src="../Assets/img/deposito.svg" alt="Asesoramiento con dinero" width="90px"
                     height="90px"></span>
             <h2>Financiamiento Accesible</h2>
-            <p>En la cooperativa ofrecemos líneas de crédito pensadas para ayudarte a concretar tus metas, sin
-                exigencias bancarias difíciles ni intereses abusivos. Ya sea para emprender un negocio, mejorar tu
-                vivienda o afrontar gastos imprevistos, vas a encontrar alternativas con plazos flexibles, asesoramiento
-                cercano y total transparencia. El dinero puede ser una herramienta al servicio de tus proyectos.</p>
+            <p>Ofrecemos créditos con condiciones justas y plazos flexibles. Sin intereses abusivos ni trámites
+                complicados, te ayudamos a alcanzar tus metas con apoyo real y cercano.</p>
             <button>Conoce mas</button>
         </article>
 
@@ -53,10 +52,8 @@
             <span class="icono"><img src="../Assets/img/handshake.svg" alt="Apreton de manos" width="100px"
                     height="100px"></span>
             <h2>Acompañamiento Personalizado</h2>
-            <p>No estás solo: desde el momento en que te sumás, nuestro equipo te acompaña y asesora para que tomes las
-                mejores decisiones según tu situación. Ya sea que necesites orientación financiera, información sobre
-                nuestros servicios o resolver trámites, estamos disponibles para escucharte y darte respuestas claras.
-                Nuestro compromiso es estar cerca y construir juntos soluciones sostenibles.</p>
+            <p>No estás solo: nuestro equipo te guía desde el inicio. Te brindamos asesoramiento claro y humano para que
+                tomes decisiones seguras, adaptadas a tu situación.</p>
             <button>Conoce mas</button>
         </article>
 
@@ -64,10 +61,8 @@
             <span class="icono"><img src="../Assets/img/billetera.svg" alt="Billetera" width="90px"
                     height="90px"></span>
             <h2>Ganancias Compartidas</h2>
-            <p>A diferencia de los bancos tradicionales, en la cooperativa las ganancias no van a bolsillos ajenos: se
-                distribuyen entre todos los socios. Eso significa que tu participación no solo te beneficia
-                individualmente, sino que fortalece una red solidaria. Cada año, los excedentes se reinvierten en la
-                comunidad o se devuelven en forma de beneficios. Porque acá, crecer no es competir, sino cooperar.</p>
+            <p>En nuestra cooperativa, las ganancias se devuelven a los socios o se reinvierten en proyectos comunes.
+                Participar es construir y crecer en comunidad.</p>
             <button>Conoce mas</button>
         </article>
     </section>
@@ -99,27 +94,35 @@
             <div class="nombreYApellido">
                 <label for="" placeholder="Nombre">Nombre:</label>
                 <label for="" placeholder="Apellido">Apellido</label>
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Apellido">
+                <input required type="text" placeholder="Ryan" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
+                    title="Ingrese su nombre">
+                <input required type="text" placeholder="Breaux" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
+                    title="Ingrese su apellido">
+
             </div>
 
             <label for="">Cedula de Identidad:</label>
-            <input name="" id="" type="text" placeholder="Cedula de Identidad">
+            <input required type="text" placeholder="12345678" pattern="^\d{8}$"
+                title="Ingrese su CI sin puntos ni guiones">
 
             <label for="">Fecha de Nacimiento:</label>
-            <input name="" id="" type="date">
+            <input required name="" id="" type="date" title="Ingrese su fecha de nacimiento">
 
             <label for="">Correo Electronico:</label>
-            <input name="" id="" type="email" placeholder="Email">
+            <input required name="" id="" type="email" placeholder="ejemplo@gmail.com"
+                title="Ingrese su correo electronico">
 
             <label for="">Contraseña:</label>
-            <input name="" id="" type="password" placeholder="Contraseña">
+            <input required type="password" placeholder="********"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_])[A-Za-z\d\-_]{8,}$""
+                title=" La contraseña debe tener 6 caracteres como minimo, incluyendo una letra y un número">
 
             <label for="">Confirmcion de Contraseña:</label>
-            <input name="" id="" type="text" placeholder="Confirmacion de Contraseña">
+            <input required name="" id="" type="password" placeholder="********">
 
             <label for="">Telefono:</label>
-            <input name="" id="" type="tel" placeholder="Telefono">
+            <input required type="tel" placeholder="092456789" pattern="^\d{9}$"
+                title="Ingrese su numero de telefono, debe cumplir con el formato indicado en la plantilla de ejemplo">
             <button>Enviar Solicitud</button>
         </form>
     </div>

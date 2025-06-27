@@ -258,6 +258,25 @@ section {
     color: grey;
 }
 
+#formLanding input:focus {
+    outline: none;
+    border: 0.125rem solid var(--colorComplementarioOscuro);
+    box-shadow: 0 0 0.3rem var(--colorComplementarioClaro);
+    background-color: #f9f9f9;
+    color: black;
+}
+
+#formLanding input:invalid {
+    border: 0.125rem solid var(--colorSecundarioClaro);
+    background-color: #ffeaea;
+}
+
+#formLanding input:valid {
+    border: 0.125rem solid var(--colorComplementario);
+    background-color: white;
+    color: black;
+}
+
 #formLanding button {
     margin: 0.75rem;
     padding: 1rem 3rem;
@@ -417,4 +436,23 @@ footer {
     box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: 0.3s ease-in-out;
+}
+
+#formLogin input:focus {
+    outline: none;
+    border: 0.125rem solid var(--colorComplementarioOscuro);
+    box-shadow: 0 0 0.3rem var(--colorComplementarioClaro);
+    background-color: #f9f9f9;
+    color: black;
+}
+
+#formLogin input:invalid {
+    border: 0.125rem solid var(--colorSecundarioClaro);
+    background-color: #ffeaea;
+}
+
+#formLogin input:valid {
+    border: 0.125rem solid var(--colorComplementario);
+    background-color: white;
+    color: black;
 }
