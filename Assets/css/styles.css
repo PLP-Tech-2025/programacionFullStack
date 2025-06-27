@@ -299,10 +299,16 @@ section {
 footer {
     background: linear-gradient(to top, var(--colorPrincipalClaro), var(--colorPrincipalOscuro));
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 5rem;
+}
+
+.seccionesFooter {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-height: 5rem;
 }
 
 .informacionYRedes ul {
@@ -376,6 +382,11 @@ footer {
     text-decoration: none;
     font-size: 1.2rem;
     color: white;
+}
+
+.derechosReservados p {
+    text-align: center;
+    color: var(--colorComplementarioHover);
 }
 
 /* ************************ */
