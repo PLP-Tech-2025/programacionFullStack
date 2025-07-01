@@ -1,5 +1,4 @@
 :root {
-    /* colores base*/
     --base: #fffaf5;
     --colorPrincipal: #c7a97f;
     --colorPrincipalClaro: #cbb882;
@@ -13,6 +12,21 @@
     --colorComplementarioHover: #3e5c3d;
     --colorComplementarioClaroHover: #6a8f69;
     --colorComplementarioOscuroHover: #3d5b3c;
+
+
+    /* --base: #f0f4f8;
+  --colorPrincipal: #73b3d3;
+  --colorPrincipalClaro: #a2d1ea;
+  --colorPrincipalOscuro: #5589aa;
+  --colorSecundario: #3d5a80;
+  --colorSecundarioClaro: #5c7aa6;
+  --colorSecundarioOscuro: #2c405d;
+  --colorComplementario: #1d3557;
+  --colorComplementarioClaro: #406589;
+  --colorComplementarioOscuro: #0d1f36;
+  --colorComplementarioHover: #0a1829;
+  --colorComplementarioClaroHover: #5a87b0;
+  --colorComplementarioOscuroHover: #081421;   */
 }
 
 * {
@@ -30,7 +44,7 @@ body {
 }
 
 header {
-    background: linear-gradient(to bottom, var(--colorPrincipalClaro), var(--colorPrincipalOscuro));
+    background-color: var(--colorPrincipal);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -111,7 +125,7 @@ header nav ul li a:hover {
 .separadorDeContenido {
     height: 0.375rem;
     border-radius: 1.25rem;
-    background: linear-gradient(to right, var(--colorComplementarioClaro), var(--colorComplementarioOscuro));
+    background-color: var(--colorComplementarioClaro);
     width: 30%;
     margin: 1rem auto;
 }
@@ -176,7 +190,7 @@ section {
 #informacionYRegistro {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background: linear-gradient(to top left, var(--colorPrincipalClaro), var(--colorSecundarioOscuro));
+    background-color: var(--colorSecundario);
     padding: 1rem;
     margin: 1rem 0;
 }
@@ -297,7 +311,7 @@ section {
 }
 
 footer {
-    background: linear-gradient(to top, var(--colorPrincipalClaro), var(--colorPrincipalOscuro));
+    background-color: var(--colorPrincipal);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
