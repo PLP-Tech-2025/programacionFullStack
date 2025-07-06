@@ -15,11 +15,13 @@
         <img src="../Assets/img/cooperativas-vector-logo.png" alt="Logo de cooperativa">
         <nav>
             <ul>
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#informacionYRegistro">Contacto</a></li>
+                <li><a href="./index.html">Inicio</a></li>
                 <li><a href="#informacionYRegistro">Registro</a></li>
                 <li><a href="./pages/login.html">Inicio Sesion</a></li>
-                <li><a href="#footer">Redes</a></li>
+                <li><a href="./pages/sobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a href="./pages/">Testimonios de Socios</a></li>
+                <li><a href="./pages/preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
+                <li><a href="./pages/normativa.html">Normativa</a></li>
             </ul>
         </nav>
     </header>
@@ -45,7 +47,7 @@
                     height="90px"></span>
             <h2>Financiamiento Accesible</h2>
             <p>Ofrecemos créditos con condiciones justas y plazos flexibles. Sin intereses abusivos ni trámites
-                complicados, te ayudamos a alcanzar tus metas con apoyo real y cercano.</p>
+                complicados, te ayudamos con apoyo real y cercano.</p>
             <button>Conoce mas</button>
         </article>
 
@@ -94,7 +96,7 @@
             </div>
             <div class="nombreYApellido">
                 <label for="" placeholder="Nombre">Nombre:</label>
-                <label for="" placeholder="Apellido">Apellido</label>
+                <label for="" placeholder="Apellido">Apellido:</label>
                 <input required type="text" placeholder="Ryan" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
                     title="Ingrese su nombre">
                 <input required type="text" placeholder="Breaux" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
@@ -125,6 +127,12 @@
             <label for="">Telefono:</label>
             <input required type="tel" placeholder="092456789" pattern="^\d{9}$"
                 title="Ingrese su numero de telefono, debe cumplir con el formato indicado en la plantilla de ejemplo">
+
+            <div class="terminosCondiciones">
+                <input type="checkbox" required>
+                <h2>He leido y acepto los <a href="./pages/normativa.html">terminos y condiciones</a> de COVISAB</h2>
+            </div>
+
             <button>Enviar Solicitud</button>
         </form>
     </div>
@@ -134,16 +142,15 @@
 
         <div class="seccionesFooter">
             <div class="informacionYRedes">
-                <img src="../Assets/img/l" alt="logoCooperativa">
+                <img src="../Assets/img/cooperativas-vector-logo.png" alt="logoCooperativa" height="60px" width="60px">
                 <p>Más que una cooperativa, una comunidad<span class="espacio">comprometida con el desarrollo de
                         nuestros</span>socios y el bienestar colectivo.</p>
                 <ul>
-                    <li><a href="https://facebook.com" target="_blank"><img src="../Assets/img/facebook-svgrepo-com.svg"
+                    <li><a href="https://facebook.com" target="_blank"><img src="../Assets/img/logoFacebook.svg"
                                 alt="Facebook" width="30px" height="30px"></a></li>
-                    <li><a href="https://instagram.com" target="_blank"><img
-                                src="../Assets/img/instagram-svgrepo-com.svg" alt="Instagram" width="30px"
-                                height="30px"></a></li>
-                    <li><a href="https://x.com" target="_blank"><img src="../Assets/img/xLogo.svg" alt="X" width="30px"
+                    <li><a href="https://instagram.com" target="_blank"><img src="../Assets/img/logoInstagram.svg"
+                                alt="Instagram" width="30px" height="30px"></a></li>
+                    <li><a href="https://x.com" target="_blank"><img src="../Assets/img/logoX.svg" alt="X" width="30px"
                                 height="30px"></a></li>
                 </ul>
 
@@ -151,20 +158,21 @@
             <div class="enlacesRapidos">
                 <h2>Enlaces</h2>
                 <ul>
-                    <li><a href="#header"><span>></span> Inicio</a></li>
-                    <li><a href="#beneficios"><span>></span> Beneficios</a></li>
-                    <li><a href="#informacionYRegistro"><span>></span> Contacto</a></li>
-                    <li><a href="#informacionYRegistro"><span>></span> Registro</a></li>
-                    <li><a href="#footer"><span>></span> Redes</a></li>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="#informacionYRegistro">Registro</a></li>
+                    <li><a href="./pages/login.html">Inicio Sesion</a></li>
+                    <li><a href="./pages/sobreNosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="./pages/">Testimonios de Socios</a></li>
+                    <li><a href="./pages/preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
+                    <li><a href="./pages/normativa.html">Normativa</a></li>
                 </ul>
             </div>
 
             <div class="contactoFooter">
                 <h2>Contacto</h2>
                 <ul>
-                    <li><span><img src="../Assets/img/correo.svg" alt="Correo" width="25px" height="25px"></span>
-                        E-Mail:
-                        correo@correo.com</li>
+                    <li><span><img src="../Assets/img/correo.svg" alt="Correo" width="25px"
+                                height="25px"></span>E-Mail:correo@correo.com</li>
                     <li><span><img src="../Assets/img/telefono.svg" alt="Telefono" width="25px"
                                 height="25px"></span>Telefono: +598 99 123 456</li>
                     <li><span><img src="../Assets/img/casa.svg" alt="Local" width="25px" height="25px"></span>Sucursal:
