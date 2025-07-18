@@ -89,16 +89,16 @@
 
 
         <!-- Formulario de Registro -->
-        <form id="formLanding">
+        <!-- <form id="formLanding">
             <div>
                 <h2>Formulario de <span class="espacio">Registro</span></h2>
             </div>
             <div class="nombreYApellido">
-                <label for="" placeholder="Nombre">Nombre:</label>
-                <label for="" placeholder="Apellido">Apellido:</label>
-                <input required type="text" placeholder="Ryan" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
+                <label for="usr_nombre" placeholder="Nombre">Nombre:</label>
+                <label for="usr_apellido" placeholder="Apellido">Apellido:</label>
+                <input required name="usr_nombre" id="usr_nombre" type="text" placeholder="Ryan" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
                     title="Ingrese su nombre">
-                <input required type="text" placeholder="Breaux" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
+                <input required name="usr_apellido" id="usr_apellido" type="text" placeholder="Breaux" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
                     title="Ingrese su apellido">
 
             </div>
@@ -133,8 +133,38 @@
             </div>
 
             <button>Enviar Solicitud</button>
-        </form>
+        </form> -->
+
+        <!-- Formulario para añadir un nuevo usuario -->
+    <form id="uploadForm" class="my-4 bg-light text-dark p-4 rounded col-lg-6 mx-auto" enctype="multipart/form-data"
+        action="http://localhost/programacionFullStack/Back/API_Usuarios/api.php/usuarios" method="POST">
+        <h1>Registro de usuarios</h1>
+        <div class="mb-3">
+            <label for="usr_nombre">Nombre</label>
+            <input type="text" id="usr_nombre" name="usr_nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="usr_email">Email</label>
+            <input type="email"id="usr_email" name="usr_email" required>
+        </div>
+        <div class="mb-3">
+            <label for="usr_pass">Contraseña</label>
+            <input type="password" id="usr_pass" name="usr_pass" required>
+        </div>
+        <div class="mb-3">
+            <label for="imagen" class="form-label">Imagen</label>
+            <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary col-lg-4 mx-auto mt-3">Registrar usuario</button>
+        </div>
+    </form>
     </div>
+
+    <div id="testBody" class="row rounded mx-auto m-4 text-center"></div>
+    </div>
+
+
 
     <!-- Footer -->
     <footer id="footer">
@@ -183,6 +213,111 @@
         </div>
 
     </footer>
+
+    <!-- Solicitud POST para añadir un nuevo usuario a la API -->
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const fileInput = form.imagen;
+            const file = fileInput.files[0];
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const data = {
+                    usr_nombre: form.usr_nombre.value,
+                    usr_email: form.usr_email.value,
+                    usr_pass: form.usr_pass.value,
+                    imagen: event.target.result // base64
+                };
+
+                console.log(JSON.stringify(data));
+
+                fetch('http://localhost/programacionFullStack/Back/API_Usuarios/api.php/usuarios', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert('Usuario registrado correctamente');
+                        location.reload();
+                    })
+                    .catch(error => {
+                        alert('Error al registrar usuario');
+                        console.error(error);
+                    });
+            };
+            reader.readAsDataURL(file);
+        });
+    </script>
+
+    <!-- Solicitud GET para obtener los usuarios de la API -->
+    <script>
+        // Define la URL de la API
+        const apiUrl = 'http://localhost/programacionFullStack/Back/API_Usuarios/api.php/usuarios';
+        // Ejecuta la solicitud GET a la API para obtener los usuarios
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                // Llama a la función para cargar los usuarios en la tabla HTML
+                loadUsuarios(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+
+    <!-- Función para cargar los usuarios en una tabla HTML -->
+    <script>
+        function loadUsuarios(data) {
+            // Crea una tabla HTML para mostrar los usuarios
+            var table = document.createElement("table");
+            table.border = "1";
+            // Añade una fila de encabezado a la tabla.
+            var row = table.insertRow(-1);
+            // Añade las celdas de encabezado.
+            var headerCell = document.createElement("TH");
+            headerCell.innerHTML = "ID";
+            row.appendChild(headerCell);
+            headerCell = document.createElement("TH");
+            headerCell.innerHTML = "Nombre";
+            row.appendChild(headerCell);
+            headerCell = document.createElement("TH");
+            headerCell.innerHTML = "Email";
+            row.appendChild(headerCell);
+            headerCell = document.createElement("TH");
+            headerCell.innerHTML = "Imágen";
+            row.appendChild(headerCell);
+            // Añade las filas de datos a la tabla.
+            for (var i = 0; i < data.length; i++) {
+                // Crea una nueva fila para cada usuario.
+                var row = table.insertRow(-1);
+                // Añade las celdas de datos a la fila.
+                var cell = row.insertCell(-1);
+                cell.innerHTML = data[i].id;
+                cell = row.insertCell(-1);
+                cell.innerHTML = data[i].usr_nombre;
+                cell = row.insertCell(-1);
+                cell.innerHTML = data[i].usr_email;
+                cell = row.insertCell(-1);
+                cell.innerHTML = "<img src='http://localhost/programacionFullStack/Back/API_Usuarios/uploads/" + data[i].imagen + "' alt='Imagen de usuario' style='width: 100px; height: auto;'>";
+            }
+            var dvTable = document.getElementById("testBody");
+            // Limpia el contenido del div y añade la tabla.
+            dvTable.innerHTML = "";
+            // Añade la tabla al elemento con id "testBody".
+            dvTable.appendChild(table);
+        }
+    </script>
 </body>
 
 </html>
