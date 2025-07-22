@@ -25,7 +25,7 @@ class Usuario
 		$query = "SELECT * FROM usuario";
 		$result = mysqli_query($this->conn, $query);
 		$usuarios = [];
-		while($row = mysqli_fetch_assoc($result)) {
+		while ($row = mysqli_fetch_assoc($result)) {
 			$usuarios[] = $row;
 		}
 		return $usuarios;
@@ -41,13 +41,18 @@ class Usuario
 	// Agregar un nuevo usuario
 	public function addUsuario($data)
 	{
-		if(!isset($data['usr_nombre']) || !isset($data['imagen']) || !isset($data['usr_email']) || !isset($data['usr_pass'])) {
+		if (!isset($data['usr_nombre']) || !isset($data['imagen']) || !isset($data['usr_email']) || !isset($data['usr_pass'])) {
 			http_response_code(400);
 			echo json_encode(["error" => "Datos incompletos"]);
-		}else{
+		} else {
 			$usr_nombre = $data['usr_nombre'];
+			$usr_apellido = $data['usr_apellido'];
+			$usr_ci = $data['usr_ci'];
+			$usr_nac = $data['usr_nac'];
 			$usr_email = $data['usr_email'];
 			$usr_pass = password_hash($data['usr_pass'], PASSWORD_DEFAULT);
+			$usr_tel = $data['usr_tel'];
+
 			// Procesar imagen base64
 			$img_data = $data['imagen'];
 			if (preg_match('/^data:image\/(\w+);base64,/', $img_data, $type)) {
@@ -69,9 +74,9 @@ class Usuario
 				echo json_encode(["error" => "Formato de imagen inválido"]);
 				exit;
 			}
-			$query = "INSERT INTO usuario (usr_nombre, usr_email, usr_pass, imagen) VALUES ('$usr_nombre', '$usr_email', '$usr_pass', '$img_name')";
+			$query = "INSERT INTO usuario (usr_nombre, usr_apellido, usr_ci, usr_nac, usr_email, usr_pass, usr_tel, imagen) VALUES ('$usr_nombre', '$usr_apellido', '$usr_ci', '$usr_nac', '$usr_email', '$usr_pass', '$usr_tel','$img_name')";
 			$result = mysqli_query($this->conn, $query);
-			if($result){
+			if ($result) {
 				return true;
 			} else {
 				return false;
@@ -85,9 +90,9 @@ class Usuario
 		//echo "email: $usr_email, pass: $usr_pass";
 		$query = "SELECT * FROM usuario WHERE usr_email = '$usr_email'";
 		$result = mysqli_query($this->conn, $query);
-		if(mysqli_num_rows($result) > 0){
+		if (mysqli_num_rows($result) > 0) {
 			$usuario = mysqli_fetch_assoc($result);
-			if(password_verify($usr_pass, $usuario['usr_pass'])){
+			if (password_verify($usr_pass, $usuario['usr_pass'])) {
 				return $usuario; // Retorna el usuario si las credenciales son correctas
 			} else {
 				return false; // Contraseña incorrecta
@@ -101,11 +106,16 @@ class Usuario
 	public function updateUsuario($id, $data)
 	{
 		$usr_nombre = $data['usr_nombre'];
+		$usr_apellido = $data['usr_apellido'];
+		$usr_ci = $data['usr_ci'];
+		$usr_nac = $data['usr_nac'];
 		$usr_email = $data['usr_email'];
-		$usr_pass = $data['usr_pass'];
-		$query = "UPDATE usuario SET usr_nombre = '$usr_nombre', usr_email = '$usr_email', usr_pass = '$usr_pass' WHERE id = ".$id;
+		$usr_pass = password_hash($data['usr_pass'], PASSWORD_DEFAULT);
+		$usr_tel = $data['usr_tel'];
+
+		$query = "UPDATE usuario SET usr_nombre = '$usr_nombre', usr_apellido = '$usr_apellido', usr_ci = '$usr_ci', usr_nac = '$usr_nac', usr_email = '$usr_email', usr_pass = '$usr_pass', usr_tel = '$usr_tel', WHERE id = " . $id;
 		$result = mysqli_query($this->conn, $query);
-		if($result){
+		if ($result) {
 			return true;
 		} else {
 			return false;
@@ -114,9 +124,9 @@ class Usuario
 	// Eliminar un usuario por ID
 	public function deleteUsuario($id)
 	{
-		$query = "DELETE FROM usuario WHERE id = ".$id;
+		$query = "DELETE FROM usuario WHERE id = " . $id;
 		$result = mysqli_query($this->conn, $query);
-		if($result){
+		if ($result) {
 			return true;
 		} else {
 			return false;

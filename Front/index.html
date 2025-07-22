@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COVISAB | Inicio </title>
     <link rel="stylesheet" href="../Assets/css/styles.css">
-    <script type="module" src="https://unpkg.com/@material/web/all.js?module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -89,76 +89,55 @@
 
 
         <!-- Formulario de Registro -->
-        <!-- <form id="formLanding">
+        <form id="formLanding" method="POST" enctype="multipart/form-data" action="http://localhost/API_restful_js/API/api.php/usuarios" method="POST">
             <div>
                 <h2>Formulario de <span class="espacio">Registro</span></h2>
             </div>
             <div class="nombreYApellido">
                 <label for="usr_nombre" placeholder="Nombre">Nombre:</label>
                 <label for="usr_apellido" placeholder="Apellido">Apellido:</label>
-                <input required name="usr_nombre" id="usr_nombre" type="text" placeholder="Ryan" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
-                    title="Ingrese su nombre">
-                <input required name="usr_apellido" id="usr_apellido" type="text" placeholder="Breaux" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$"
-                    title="Ingrese su apellido">
+                <input required name="usr_nombre" id="usr_nombre" type="text" placeholder="Ryan"
+                    pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$" title="Ingrese su nombre">
+                <input required name="usr_apellido" id="usr_apellido" type="text" placeholder="Breaux"
+                    pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,40}$" title="Ingrese su apellido">
 
             </div>
 
-            <label for="">Cedula de Identidad:</label>
-            <input required type="text" placeholder="12345678" pattern="^\d{8}$"
+            <label for="usr_ci">Cedula de Identidad:</label>
+            <input required name="usr_ci" id="usr_ci" type="text" placeholder="12345678" pattern="^\d{8}$"
                 title="Ingrese su CI sin puntos ni guiones">
 
-            <label for="">Fecha de Nacimiento:</label>
-            <input required name="" id="" type="date" title="Ingrese su fecha de nacimiento">
+            <label for="usr_nac">Fecha de Nacimiento:</label>
+            <input required name="usr_nac" id="usr_nac" type="date" title="Ingrese su fecha de nacimiento">
 
-            <label for="">Correo Electronico:</label>
-            <input required name="" id="" type="email" placeholder="ejemplo@gmail.com"
+            <label for="usr_email">Correo Electronico:</label>
+            <input required name="usr_email" id="usr_email" type="email" placeholder="ejemplo@gmail.com"
                 title="Ingrese su correo electronico">
 
-            <label for="">Contraseña:</label>
-            <input required type="password" placeholder="********"
-                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_])[A-Za-z\d\-_]{8,}$""
-                title=" La contraseña debe tener 6 caracteres como minimo, incluyendo una letra y un número">
+            <label for="usr_pass">Contraseña:</label>
+            <input required name="usr_pass" id="usr_pass" type="password" placeholder="********"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Debe contener al menos 8 caracteres, una letra mayúscula, una minúscula y un número">
 
-            <label for="">Confirmcion de Contraseña:</label>
-            <input required name="" id="" type="password" placeholder="********"
-                title="Esta debe ser igual a la contraseña ingresada previamente">
+            <label for="usr_passVer">Confirmcion de Contraseña:</label>
+            <input required name="usr_passVer" id="usr_passVer" type="password" placeholder="********"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Debe contener al menos 8 caracteres, una letra mayúscula, una minúscula y un número">
 
-            <label for="">Telefono:</label>
-            <input required type="tel" placeholder="092456789" pattern="^\d{9}$"
+            <label for="usr_tel">Telefono:</label>
+            <input required name="usr_tel" id="usr_tel" type="tel" placeholder="092456789" pattern="^\d{9}$"
                 title="Ingrese su numero de telefono, debe cumplir con el formato indicado en la plantilla de ejemplo">
 
             <div class="terminosCondiciones">
-                <input type="checkbox" required>
+                <input required name="chkTerms" id="chkTerms" type="checkbox">
                 <h2>He leido y acepto los <a href="./pages/#">terminos y condiciones</a> de COVISAB</h2>
             </div>
 
-            <button>Enviar Solicitud</button>
-        </form> -->
+            <label for="imagen">Imagen</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
 
-        <!-- Formulario para añadir un nuevo usuario -->
-    <form id="uploadForm" class="my-4 bg-light text-dark p-4 rounded col-lg-6 mx-auto" enctype="multipart/form-data"
-        action="http://localhost/programacionFullStack/Back/API_Usuarios/api.php/usuarios" method="POST">
-        <h1>Registro de usuarios</h1>
-        <div class="mb-3">
-            <label for="usr_nombre">Nombre</label>
-            <input type="text" id="usr_nombre" name="usr_nombre" required>
-        </div>
-        <div class="mb-3">
-            <label for="usr_email">Email</label>
-            <input type="email"id="usr_email" name="usr_email" required>
-        </div>
-        <div class="mb-3">
-            <label for="usr_pass">Contraseña</label>
-            <input type="password" id="usr_pass" name="usr_pass" required>
-        </div>
-        <div class="mb-3">
-            <label for="imagen" class="form-label">Imagen</label>
-            <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
-        </div>
-        <div class="row">
-            <button type="submit" class="btn btn-primary col-lg-4 mx-auto mt-3">Registrar usuario</button>
-        </div>
-    </form>
+            <button type="submit">Enviar Solicitud</button>
+        </form>
     </div>
 
     <div id="testBody" class="row rounded mx-auto m-4 text-center"></div>
@@ -216,7 +195,7 @@
 
     <!-- Solicitud POST para añadir un nuevo usuario a la API -->
     <script>
-        document.getElementById('uploadForm').addEventListener('submit', function (e) {
+        document.getElementById('formLanding').addEventListener('submit', function (e) {
             e.preventDefault();
             const form = e.target;
             const fileInput = form.imagen;
@@ -226,8 +205,12 @@
             reader.onload = function (event) {
                 const data = {
                     usr_nombre: form.usr_nombre.value,
+                    usr_apellido: form.usr_apellido.value,
+                    usr_ci: form.usr_ci.value,
+                    usr_nac: form.usr_nac.value,
                     usr_email: form.usr_email.value,
                     usr_pass: form.usr_pass.value,
+                    usr_tel: form.usr_tel.value,
                     imagen: event.target.result // base64
                 };
 
