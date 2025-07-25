@@ -328,12 +328,35 @@ section {
 
 #formLanding button:hover,
 #formLogin button:hover {
-    background-color: var(--colorTexto);
-    color: var(--colorComplementario);
+    background-color: var(--colorComplementarioClaro);
     box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
+
+#formLanding .passMostrar {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    align-items: center;
+}
+
+#formLanding .passMostrar button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0 2rem 0.6rem 1rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+.passMostrar button img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
 
 footer {
     background-color: var(--colorPrincipal);
@@ -593,4 +616,4 @@ footer {
     #formLogin {
         margin: 4rem 1rem;
     }
-} 
+}

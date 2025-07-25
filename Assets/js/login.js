@@ -1,0 +1,29 @@
+//Login
+document.getElementById('formLogin').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+        usr_email: form.usr_email_login.value,
+        usr_pass: form.usr_pass_login.value
+    };
+    fetch('http://localhost/programacionFullStack/Back/API_Usuarios/api.php/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Inicio de sesión exitoso');
+                // Redirigir a otra página o realizar otra acción
+            } else {
+                alert('Error al iniciar sesión: ' + data.error);
+            }
+        })
+        .catch(error => {
+            alert('Error al iniciar sesión');
+            console.error(error);
+        });
+});
