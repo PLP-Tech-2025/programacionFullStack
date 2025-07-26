@@ -6,7 +6,7 @@ document.getElementById('formLogin').addEventListener('submit', function (e) {
         usr_email: form.usr_email_login.value,
         usr_pass: form.usr_pass_login.value
     };
-    fetch('http://localhost/programacionFullStack/Back/API_Usuarios/api.php/login', {
+    fetch('http://localhost/programacionFullStack/frontUsuarios/Back/API_Usuarios/api.php/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

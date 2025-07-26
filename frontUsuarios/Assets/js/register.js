@@ -25,7 +25,7 @@ document.getElementById('formLanding').addEventListener('submit', function (e) {
 
         console.log(JSON.stringify(data));
 
-        fetch('http://localhost/programacionFullStack/Back/API_Usuarios/api.php/usuarios', {
+        fetch('http://localhost/programacionFullStack/frontUsuarios/Back/API_Usuarios/api.php/usuarios', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ document.getElementById('formLanding').addEventListener('submit', function (e) {
 });
 
 // Define la URL de la API
-const apiUrl = 'http://localhost/programacionFullStack/Back/API_Usuarios/api.php/usuarios';
+const apiUrl = 'http://localhost/programacionFullStack/frontUsuarios/Back/API_Usuarios/api.php/usuarios';
 // Ejecuta la solicitud GET a la API para obtener los usuarios
 fetch(apiUrl)
     .then(response => {

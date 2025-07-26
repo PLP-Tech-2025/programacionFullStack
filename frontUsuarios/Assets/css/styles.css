@@ -83,7 +83,7 @@ header nav ul li a:hover {
     z-index: 1;
 }
 
-.incentivoFormulario {
+.encabezadoLanding {
     text-align: center;
     margin: 1rem;
     color: var(--colorPrincipal);
@@ -329,7 +329,7 @@ section {
 #formLanding button:hover,
 #formLogin button:hover {
     background-color: var(--colorComplementarioClaro);
-    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -352,11 +352,54 @@ section {
 }
 
 .passMostrar button img {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     display: block;
 }
 
+.preguntas {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.pregunta {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorPrincipal);
+    color: var(--colorTexto);
+    margin: 0.1rem auto;
+    width: 50rem;
+}
+
+.pregunta:hover {
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+.basePregunta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3rem;
+}
+
+.basePregunta button {
+    background-color: var(--colorPrincipal);
+    width: 3rem;
+    height: 80%;
+    border: 0;
+    border-right: 0.125rem solid var(--colorTexto);
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--colorTexto);
+}
+
+.basePregunta h2 {
+    margin-left: 0.5rem;
+}
 
 footer {
     background-color: var(--colorPrincipal);
@@ -372,7 +415,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     width: 100%;
 }
@@ -383,7 +426,7 @@ footer {
 }
 
 .informacionYRedes img {
-    max-width: 120px;
+    max-width: 7.5rem;
     margin-bottom: 1rem;
 }
 
@@ -496,7 +539,7 @@ footer {
 .derechosReservados {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
 }
 
 .derechosReservados p {
@@ -517,7 +560,7 @@ footer {
     margin: 4rem auto;
     justify-content: center;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-    max-width: 500px;
+    max-width: 31.25rem;
 }
 
 #formLogin div h2 {

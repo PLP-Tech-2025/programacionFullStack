@@ -31,7 +31,7 @@
         <h1><span class="espacio">COVISAB</span> más que una cooperativa</h1>
     </div>
 
-    <div class="incentivoFormulario">
+    <div class="encabezadoLanding">
         <h2>Conoce los Beneficios de formar parte de COVISAB</h2>
         <div class="separadorDeContenido"></div>
         <!-- Cooperativa de Viviendas Servicios Altruistas Basicos-->
@@ -47,9 +47,9 @@
             <h2>Financiamiento Accesible</h2>
             <p>Ofrecemos créditos con condiciones justas y plazos flexibles. Sin intereses abusivos ni trámites
                 complicados, te ayudamos con apoyo real y cercano.</p>
-            <div id="infoContainer"></div>
+            <div id="infoContenedorFinanciamiento"></div>
 
-            <button id="btnInfo">Conoce Más</button>
+            <button id="btnInfoFinanciamiento">Conoce Más</button>
 
         </article>
 
@@ -59,7 +59,9 @@
             <h2>Acompañamiento Personalizado</h2>
             <p>No estás solo: nuestro equipo te guía desde el inicio. Te brindamos asesoramiento claro y humano para que
                 tomes decisiones seguras, adaptadas a tu situación.</p>
-            <button>Conoce mas</button>
+            <div id="infoContenedorAcompaniamiento"></div>
+
+            <button id="btnInfoAcompanimiento">Conoce Más</button>
         </article>
 
         <article class="beneficiosCooperativa">
@@ -68,7 +70,9 @@
             <h2>Ganancias Compartidas</h2>
             <p>En nuestra cooperativa, las ganancias se devuelven a los socios o se reinvierten en proyectos comunes.
                 Participar es construir y crecer en comunidad.</p>
-            <button>Conoce mas</button>
+            <div id="infoContenedorGanancias"></div>
+
+            <button id="btnInfoGanancias">Conoce Más</button>
         </article>
     </section>
 
@@ -156,10 +160,38 @@
         </form>
     </div>
 
-    <div id="testBody" class="row rounded mx-auto m-4 text-center"></div>
+    <div class="encabezadoLanding">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="separadorDeContenido"></div>
+        <!-- Cooperativa de Viviendas Servicios Altruistas Basicos-->
     </div>
 
+    <div class="preguntas">
+        <div class="pregunta">
+            <div class="basePregunta">
+                <button id="btnPregunta1">+</button>
+                <h2>¿Qué es una cooperativa de viviendas de ayuda mutua (CVAM)?</h2>
+            </div>
+            <div id="pregunta1Contenedor"></div>
+        </div>
 
+        <div class="pregunta">
+            <div class="basePregunta">
+                <button id="btnPregunta2">+</button>
+                <h2>¿Quién puede formar parte de la cooperativa?</h2>
+            </div>
+            <div id="pregunta2Contenedor"></div>
+        </div>
+
+        <div class="pregunta">
+            <div class="basePregunta">
+                <button id="btnPregunta3">+</button>
+                <h2>¿Cuáles son los aportes económicos que debo realizar?</h2>
+            </div>
+            <div id="pregunta3Contenedor"></div>
+
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="footer">
