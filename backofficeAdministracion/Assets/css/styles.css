@@ -1,0 +1,157 @@
+:root {
+    --base: #f5f7fa;
+    --baseSombra: #969696;
+    --colorPrincipal: #0d3b66;
+    --colorSecundario: #2a7f62;
+    --colorSecundarioClaro: #5d9d7f;
+    --colorComplementario: #e67e22;
+    --colorComplementarioClaro: #f39c12;
+    --colorComplementarioOscuro: #d35400;
+    --colorComplementarioHover: #f1c40f;
+    --colorBlanco: #ffffff;
+    --colorTextoOscuro: #333333;
+    --colorTextoClaro: #eeeeee;
+    --colorHoverFilas: #f1f5ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--base);
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    min-height: 100vh;
+
+}
+
+aside {
+    background-color: var(--colorSecundario);
+}
+
+aside img {
+    height: 60px;
+    width: 60px;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+}
+
+aside ul li {
+    list-style: none;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: var(--colorBlanco);
+    font-weight: bold;
+    transition: ease-in-out 0.3s
+}
+
+aside ul li a:hover {
+    color: var(--colorComplementario);
+}
+
+header nav {
+    background-color: var(--colorPrincipal);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+header nav img {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    margin: 16px;
+}
+
+header nav p {
+    color: var(--colorBlanco)
+}
+
+h1,
+h2 {
+    margin: 1rem;
+    color: var(--colorSecundario);
+}
+
+#informacionGeneral {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#informacionGeneral article {
+    background-color: var(--colorBlanco);
+    margin: 1rem;
+    padding: 1.4rem 0.5rem;
+    border-radius: 1rem;
+    border-left: 5px solid var(--colorPrincipal);
+    box-shadow: 0.1rem 0.1rem 2px var(--baseSombra);
+}
+
+.tablaSolicitudes {
+    background: var(--colorBlanco);
+    margin: auto;
+    width: 95%;
+    border-radius: 10px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tablaSolicitudes thead {
+    background: var(--colorPrincipal);
+    color: var(--colorBlanco);
+}
+
+.tablaSolicitudes th {
+    padding: 0.875rem 1rem;
+    text-align: left;
+}
+
+.tablaSolicitudes td {
+    padding: 0.875rem 1rem;
+    color: var(--colorTextoOscuro);
+    border-bottom: 1px solid var(--colorTextoClaro);
+}
+
+.tablaSolicitudes tbody tr:hover {
+    background: var(--colorHoverFilas);
+    transition: background 0.2s ease;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 0.2rem;
+}
+
+.btnAceptar {
+    background-color: rgba(32, 190, 11, 0.4);
+    transition: 0.2s ease-in-out;
+}
+
+.btnAceptar:hover {
+    background-color: rgb(32, 190, 11);
+    transition: 0.2s ease-in-out;
+}
+
+.btnRechazar {
+    background-color: rgba(255, 0, 0, 0.4);
+    transition: 0.2s ease-in-out;
+}
+
+.btnRechazar:hover {
+    background-color: rgb(255, 0, 0);
+    transition: 0.2s ease-in-out;
+}
