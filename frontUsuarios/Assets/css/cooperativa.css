@@ -134,7 +134,7 @@ h2 {
 
 
 .tablaInformacion {
-    background: var(--colorBlanco);
+    background-color: var(--colorBlanco);
     margin: auto;
     margin-bottom: 2rem;
     width: 95%;
@@ -145,7 +145,7 @@ h2 {
 }
 
 .tablaInformacion thead {
-    background: var(--colorPrincipal);
+    background-color: var(--colorPrincipal);
     color: var(--colorBlanco);
 }
 
@@ -161,7 +161,7 @@ h2 {
 }
 
 .tablaInformacion tbody tr:hover {
-    background: var(--colorHoverFilas);
+    background-color: var(--colorHoverFilas);
     transition: background 0.2s ease;
 }
 
@@ -180,24 +180,113 @@ button {
     margin: 0.1rem
 }
 
-.btnAceptar {
-    background-color: rgba(32, 190, 11, 0.4);
-    transition: 0.2s ease-in-out;
+
+.gestionPerfil {
+    background-color: var(--colorBlanco);
+    margin: 0.8rem;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 20px var(--baseSombra);
 }
 
-.btnAceptar:hover {
-    background-color: rgb(32, 190, 11);
-    transition: 0.2s ease-in-out;
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorBlanco);
+    border-radius: 0.375rem;
+    margin: 0;
+    justify-content: center;
 }
 
-.btnRechazar {
-    background-color: rgba(255, 0, 0, 0.4);
-    transition: 0.2s ease-in-out;
+.columnasDobles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.5rem;
 }
 
-.btnRechazar:hover {
-    background-color: rgb(255, 0, 0);
-    transition: 0.2s ease-in-out;
+form label {
+    color: var(--colorPrincipal);
+    font-weight: bolder;
+    margin: 0.5rem 0 0.125rem 0;
+    margin-bottom: 0.4rem;
+}
+
+form input {
+    background-color: var(--colorFondoInput);
+    color: var(--colorTextoOscuro);
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    border: 0.125rem solid rgb(136, 136, 136);
+    height: 2.8rem;
+    width: 100%;
+    transition: all 0.3s ease;
+
+}
+
+form input:focus {
+    outline: none;
+    box-shadow: 0 0 0.3rem var(--colorComplementarioOscuro);
+    background-color: #f9f9f9;
+    color: black;
+}
+
+form input:invalid {
+    border: 0.125rem solid var(--colorComplementario);
+}
+
+form input:valid {
+    border: 0.125rem solid var(--colorSecundarioClaro);
+    background-color: var(--colorTexto);
+    color: black;
+}
+
+form div a {
+    color: var(--colorComplementario);
+    font-size: 1rem;
+}
+
+form button {
+    margin: 0.75rem auto;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    background-color: var(--colorComplementario);
+    color: var(--colorTextoClaro);
+    border-style: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 1rem;
+    width: 80%;
+}
+
+form button:hover,
+#formLogin button:hover {
+    background-color: var(--colorComplementarioClaro);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.passMostrar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.passMostrar button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+.passMostrar button img {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
 }
 
 footer {

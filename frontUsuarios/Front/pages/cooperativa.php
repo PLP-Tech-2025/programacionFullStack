@@ -8,17 +8,40 @@
     <link rel="stylesheet" href="../../Assets/css/cooperativa.css">
 </head>
 
+<?php
+session_start();
+
+if (isset($_SESSION['usr_id'])) {
+    $usr_id = $_SESSION['usr_id'];
+
+    require_once '../../Back/API_Usuarios/config.php';
+    $query = "SELECT * FROM usuario WHERE usr_id = $usr_id";
+    $result = mysqli_query($conn, $query);
+    $usuario = mysqli_fetch_assoc($result);
+    $_SESSION['usr_nombre'] = $usuario['usr_nombre'];
+    $_SESSION['usr_apellido'] = $usuario['usr_apellido'];
+    $_SESSION['usr_nac'] = $usuario['usr_nac'];
+    $_SESSION['usr_email'] = $usuario['usr_email'];
+    $_SESSION['usr_tel'] = $usuario['usr_tel'];
+    $_SESSION['usr_img'] = $usuario['imagen'];
+
+
+} else {
+    header("Location: login.php");
+}
+?>
+
 <body>
     <aside>
         <img src="../../Assets/img/cooperativas-vector-logo.png" alt="">
         <ul>
-            <li><a href="#">Dashboard</a></li>
+            <li><a href="cooperativa.php">Dashboard</a></li>
             <li><a href="#">Unidad Habitacional</a></li>
             <li><a href="#">Tareas</a></li>
             <li><a href="#">Pagos</a></li>
             <li><a href="#">Justificantes</a></li>
-            <li><a href="#">Perfil</a></li>
-            <li><a href="#">Configuracion</a></li>
+            <li><a href="perfil.php"">Perfil</a></li>
+            <li><a href=" #">Configuracion</a></li>
             <li><a href="#">Cerrar Sesion</a></li>
         </ul>
     </aside>
@@ -28,8 +51,8 @@
             <nav>
                 <h1>Panel de Gestion</h1>
                 <div class="perfil">
-                    <p>Bienvenido, Usuario</p>
-                    <img src="../../Assets/img/perfilDefault.jpg" alt="Foto de perfil">
+                    <p>Bienvenido, <?php echo $_SESSION['usr_nombre'] . " " . $_SESSION['usr_apellido']; ?></p>
+                    <img src="../../Back/API_Usuarios/uploads/<?php echo $_SESSION['usr_img'] ?>." alt="Foto de perfil">
                 </div>
 
             </nav>
@@ -97,7 +120,7 @@
                 <tbody>
                     <tr>
                         <td>Revisión sistema eléctrico</td>
-                        <td>Carlos Rodríguez</td>
+                        <td>Santiago Lopez</td>
                         <td>10/03/2024</td>
                         <td>Pendiente</td>
                         <td>Actualizar</td>
@@ -129,12 +152,12 @@
                 <div class="enlacesRapidos">
                     <h2>Enlaces</h2>
                     <ul>
-                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="cooperativa.php">Dashboard</a></li>
                         <li><a href="#">Unidad Habitacional</a></li>
                         <li><a href="#">Tareas</a></li>
                         <li><a href="#">Pagos</a></li>
                         <li><a href="#">Justificantes</a></li>
-                        <li><a href="#">Perfil</a></li>
+                        <li><a href="perfil.php">Perfil</a></li>
                         <li><a href="#">Configuracion</a></li>
                         <li><a href="#">Cerrar Sesion</a></li>
                     </ul>

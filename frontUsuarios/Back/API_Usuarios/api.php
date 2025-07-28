@@ -20,7 +20,7 @@ header('Content-Type: application/json');
 // Procesa la solicitud según el método HTTP
 switch ($method) {
 	case 'GET':
-		if($endpoint === '/usuarios'){
+		if ($endpoint === '/usuarios') {
 			// Obtiene todos los usuarios
 			$usuarios = $usuarioObj->getAllUsuarios();
 			echo json_encode($usuarios);
@@ -32,18 +32,18 @@ switch ($method) {
 		}
 		break;
 	case 'POST':
-		if($endpoint === '/usuarios'){
+		if ($endpoint === '/usuarios') {
 			// Añade un nuevo usuario
 			$data = json_decode(file_get_contents('php://input'), true);
 			$result = $usuarioObj->addUsuario($data);
 			if ($result === true) {
 				http_response_code(201);
 				echo json_encode(['success' => $result]);
-			}else{
+			} else {
 				http_response_code(400);
 				echo json_encode(['error' => 'Datos incompletos o error al registrar usuario']);
 			}
-		}elseif ($endpoint === '/login') {
+		} elseif ($endpoint === '/login') {
 			$data = json_decode(file_get_contents('php://input'), true);
 			$result = $usuarioObj->loginUsuario($data['usr_email'], $data['usr_pass']);
 			if ($result != false) {
@@ -56,9 +56,16 @@ switch ($method) {
 		break;
 	case 'PUT':
 		if (preg_match('/^\/usuarios\/(\d+)$/', $endpoint, $matches)) {
-			// Actualiza un usuario por ID
+			// Obtener datos como JSON
+			$input = file_get_contents('php://input');
+			$data = json_decode($input, true); // Cambio crucial aquí
+
+			if ($data === null) {
+				echo json_encode(['success' => false, 'error' => 'Datos JSON inválidos']);
+				exit;
+			}
+
 			$usuarioId = $matches[1];
-			parse_str(file_get_contents('php://input'), $data);
 			$result = $usuarioObj->updateUsuario($usuarioId, $data);
 			echo json_encode(['success' => $result]);
 		}
@@ -78,4 +85,4 @@ switch ($method) {
 		echo json_encode(['error' => 'Método no permitido']);
 		break;
 }
-?>  
+?>

@@ -90,12 +90,15 @@ class Usuario
 	// Iniciar sesión de usuario
 	public function loginUsuario($usr_email, $usr_pass)
 	{
+		session_start();
+
 		//echo "email: $usr_email, pass: $usr_pass";
-		$query = "SELECT * FROM usuario WHERE usr_email = '$usr_email'and usr_estado='aceptado';";
+		$query = "SELECT usr_id, usr_email, usr_pass FROM usuario WHERE usr_email = '$usr_email'and usr_estado='aceptado';";
 		$result = mysqli_query($this->conn, $query);
 		if (mysqli_num_rows($result) > 0) {
 			$usuario = mysqli_fetch_assoc($result);
 			if (password_verify($usr_pass, $usuario['usr_pass'])) {
+				$_SESSION['usr_id'] = $usuario['usr_id'];
 				return $usuario; // Retorna el usuario si las credenciales son correctas
 			} else {
 				return false; // Contraseña incorrecta
@@ -110,13 +113,11 @@ class Usuario
 	{
 		$usr_nombre = $data['usr_nombre'];
 		$usr_apellido = $data['usr_apellido'];
-		$usr_ci = $data['usr_ci'];
 		$usr_nac = $data['usr_nac'];
 		$usr_email = $data['usr_email'];
-		$usr_pass = password_hash($data['usr_pass'], PASSWORD_DEFAULT);
 		$usr_tel = $data['usr_tel'];
 
-		$query = "UPDATE usuario SET usr_nombre = '$usr_nombre', usr_apellido = '$usr_apellido', usr_ci = '$usr_ci', usr_nac = '$usr_nac', usr_email = '$usr_email', usr_pass = '$usr_pass', usr_tel = '$usr_tel' WHERE usr_id = " . $id;
+		$query = "UPDATE usuario SET usr_nombre = '$usr_nombre', usr_apellido = '$usr_apellido', usr_nac = '$usr_nac', usr_email = '$usr_email', usr_tel = '$usr_tel' WHERE usr_id = " . $id;
 		$result = mysqli_query($this->conn, $query);
 		if ($result) {
 			return true;
