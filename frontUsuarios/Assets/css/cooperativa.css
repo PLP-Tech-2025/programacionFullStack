@@ -1,0 +1,347 @@
+:root {
+    --base: #ecedee;
+    --baseSombra: #969696;
+    --colorPrincipal: #0d3b66;
+    --colorSecundario: #2a7f62;
+    --colorSecundarioClaro: #5d9d7f;
+    --colorComplementario: #e67e22;
+    --colorComplementarioClaro: #f39c12;
+    --colorComplementarioOscuro: #d35400;
+    --colorComplementarioHover: #f1c40f;
+    --colorBlanco: #ffffff;
+    --colorTextoOscuro: #333333;
+    --colorTextoClaro: #eeeeee;
+    --colorHoverFilas: #f1f5ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--base);
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    min-height: 100vh;
+}
+
+aside {
+    background-color: var(--colorSecundario);
+}
+
+aside img {
+    height: 60px;
+    width: 60px;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+}
+
+aside ul li {
+    list-style: none;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: var(--colorBlanco);
+    font-weight: bold;
+    transition: ease-in-out 0.3s
+}
+
+aside ul li a:hover {
+    color: var(--colorComplementario);
+}
+
+header {
+    background-color: var(--colorPrincipal);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav img {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    margin: 16px;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav p {
+    color: var(--colorBlanco)
+}
+
+h1 {
+    margin: 1rem;
+    color: var(--colorBlanco);
+}
+
+
+h2 {
+    margin: 1rem;
+    color: var(--colorSecundario);
+}
+
+.gestionPersonal {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 1.875rem;
+}
+
+.gestionPersonal article {
+    background: var(--colorBlanco);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.05);
+    padding: 1.25rem;
+    margin: 0 0.6rem;
+    transition: transform 0.3s;
+}
+
+.gestionPersonal article:hover {
+    transform: translateY(-5px);
+}
+
+.gestionTablas {
+    background-color: var(--colorBlanco);
+    margin: 0.8rem;
+    padding: 0.6rem 0;
+    border-radius: 0.4rem;
+}
+
+.gestionTablas h2 {
+    color: var(--colorSecundario);
+    padding: 1.4rem 1rem;
+}
+
+
+.tablaInformacion {
+    background: var(--colorBlanco);
+    margin: auto;
+    margin-bottom: 2rem;
+    width: 95%;
+    border-radius: 10px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tablaInformacion thead {
+    background: var(--colorPrincipal);
+    color: var(--colorBlanco);
+}
+
+.tablaInformacion th {
+    padding: 0.875rem 1rem;
+    text-align: left;
+}
+
+.tablaInformacion td {
+    padding: 0.875rem 1rem;
+    color: var(--colorTextoOscuro);
+    border: 1px solid var(--colorTextoClaro);
+}
+
+.tablaInformacion tbody tr:hover {
+    background: var(--colorHoverFilas);
+    transition: background 0.2s ease;
+}
+
+.botonesAcciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 0.2rem;
+    margin: 0.1rem
+}
+
+.btnAceptar {
+    background-color: rgba(32, 190, 11, 0.4);
+    transition: 0.2s ease-in-out;
+}
+
+.btnAceptar:hover {
+    background-color: rgb(32, 190, 11);
+    transition: 0.2s ease-in-out;
+}
+
+.btnRechazar {
+    background-color: rgba(255, 0, 0, 0.4);
+    transition: 0.2s ease-in-out;
+}
+
+.btnRechazar:hover {
+    background-color: rgb(255, 0, 0);
+    transition: 0.2s ease-in-out;
+}
+
+footer {
+    background-color: var(--colorPrincipal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 5rem;
+    padding: 2rem 1rem;
+}
+
+.seccionesFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 75rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.informacionYRedes {
+    flex: 1;
+    max-width: 30%;
+}
+
+.informacionYRedes img {
+    max-width: 7.5rem;
+    margin-bottom: 1rem;
+}
+
+.informacionYRedes ul {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+}
+
+.informacionYRedes ul li {
+    list-style: none;
+    padding: 0.375rem;
+}
+
+.informacionYRedes ul li a img {
+    height: 1.8rem;
+    width: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.informacionYRedes ul li a:hover img {
+    transform: scale(1.1);
+}
+
+.informacionYRedes p {
+    color: var(--colorBlanco);
+    font-size: 1rem;
+    margin: 0.625rem 0;
+    line-height: 1.5;
+}
+
+.enlacesRapidos {
+    flex: 1;
+    max-width: 30%;
+}
+
+.enlacesRapidos h2 {
+    color: var(--colorComplementarioOscuro);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.enlacesRapidos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.enlacesRapidos ul li {
+    margin: 0.75rem 0;
+}
+
+.enlacesRapidos ul li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--colorBlanco);
+    display: flex;
+    align-items: center;
+    transition: ease-in-out 0.3s;
+}
+
+.enlacesRapidos ul li a:hover {
+    color: var(--colorComplementarioOscuro);
+    margin-left: 0.2rem;
+    transition: ease-in-out 0.3s;
+}
+
+.enlacesRapidos ul li a span {
+    color: var(--colorComplementarioOscuro);
+    font-weight: bolder;
+    margin-right: 0.5rem;
+}
+
+.contactoFooter {
+    flex: 1;
+    max-width: 30%;
+    margin-right: 0;
+}
+
+.contactoFooter h2 {
+    color: var(--colorComplementarioOscuro);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contactoFooter ul {
+    list-style: none;
+}
+
+.contactoFooter ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.75rem 0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--colorBlanco);
+
+}
+
+.contactoFooter ul li span {
+    margin-right: 0.75rem;
+    background-color: rgba(220, 220, 220, 0.2);
+    padding: 0.5rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.derechosReservados {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
+}
+
+.derechosReservados p {
+    text-align: center;
+    color: var(--colorBlanco);
+}

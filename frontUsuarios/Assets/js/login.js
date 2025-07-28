@@ -17,7 +17,7 @@ document.getElementById('formLogin').addEventListener('submit', function (e) {
         .then(data => {
             if (data.success) {
                 alert('Inicio de sesión exitoso');
-                window.location.href = 'http://localhost/programacionFullStack/frontUsuarios/Front/pages/cooperativa.html';
+                window.location.href = 'http://localhost/programacionFullStack/frontUsuarios/Front/pages/cooperativa.php';
             } else {
                 alert('Error al iniciar sesión: ' + data.error);
             }
