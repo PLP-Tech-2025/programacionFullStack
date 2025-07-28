@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesion</title>
+    <title>COVISAB | Inicio de Sesion</title>
     <link rel="stylesheet" href="../../Assets/css/styles.css">
 </head>
 
@@ -27,15 +27,24 @@
         <label for="usr_email_login">Correo Electronico:</label>
         <input required name="usr_email_login" id="usr_email_login" type="email" placeholder="ejemplo@gmail.com"
             title="Ingrese su correo electronico">
+
         <label for="usr_pass_login">Contraseña:</label>
-        <input required name="usr_pass_login" id="usr_pass_login" type="password" placeholder="********"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Debe contener al menos 8 caracteres, una letra mayúscula, una minúscula y un número">
+        <div class="passMostrar">
+            <input required name="usr_pass_login" id="usr_pass_login" type="password" placeholder="********"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Debe contener al menos 8 caracteres, una letra mayúscula, una minúscula y un número">
+            <button type="button" id="mostrarPassLogin">
+                <span><img id="iconoOjoPass" src="../../Assets/img/ojoCerrado.svg" alt="Ojo cerrado" width="20px"
+                        height="20px"></span>
+            </button>
+        </div>
+
         <div>
             <h2><a href="#">¿Has olvidado tu contraseña?</a></h2>
         </div>
         <button type="submit">Iniciar sesion</button>
     </form>
+
 
     <!-- Footer -->
     <footer id="footer">
@@ -87,7 +96,21 @@
         </div>
 
     </footer>
-    <script src="../../Assets/js/main.js"></script>
+    <script>
+        //Funcion para mostrar la contrasenia que se esta escribiendo 
+        function mostrarPassLogin(idBoton, idCampo, idIcono) {
+            const boton = document.getElementById(idBoton);
+            const campo = document.getElementById(idCampo);
+            const icono = document.getElementById(idIcono);
+
+            boton.addEventListener('click', function () {
+                campo.type = campo.type === 'password' ? 'text' : 'password';
+                icono.src = campo.type === 'password' ? '../../Assets/img/ojoCerrado.svg' : '../../Assets/img/ojoAbiertoo.svg';
+            });
+        }
+
+        mostrarPassLogin('mostrarPassLogin', 'usr_pass_login', 'iconoOjoPass');
+    </script>
     <script src="../../Assets/js/login.js"></script>
 </body>
 

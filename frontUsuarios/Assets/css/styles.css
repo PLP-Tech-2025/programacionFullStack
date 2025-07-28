@@ -334,19 +334,18 @@ section {
     transition: 0.3s ease-in-out;
 }
 
-#formLanding .passMostrar {
+.passMostrar {
     display: grid;
-    grid-template-columns: 7fr 1fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
 }
 
-#formLanding .passMostrar button {
+.passMostrar button {
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    margin: 0 2rem 0.6rem 1rem;
     width: 1rem;
     height: 1rem;
 }
