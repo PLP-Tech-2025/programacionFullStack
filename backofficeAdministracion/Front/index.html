@@ -1,11 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesion Backoffice Administracion</title>
+    <title>Backoffice | Inicio de Sesion</title>
+    <link rel="stylesheet" href="../Assets/css/login.css">
 </head>
+
 <body>
-    
+    <header id="header">
+        <img src="../Assets/img/cooperativas-vector-logo.png" alt="Logo de cooperativa">
+    </header>
+
+    <form id="formLogin" action="http://localhost/programacionFullStack/backofficeAdministracion/Back/loginAdmin.php" method="POST">
+        <label for="usr_email_login">Correo Electronico:</label>
+        <input required name="usr_email_login" id="usr_email_login" type="email" placeholder="ejemplo@gmail.com"
+            title="Ingrese su correo electronico">
+
+        <label for="usr_pass_login">Contraseña:</label>
+        <div class="passMostrar">
+            <input required name="usr_pass_login" id="usr_pass_login" type="password" placeholder="********"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Debe contener al menos 8 caracteres, una letra mayúscula, una minúscula y un número">
+            <button type="button" id="mostrarPassLogin">
+                <span><img id="iconoOjoPass" src="../Assets/img/ojoCerrado.svg" alt="Ojo cerrado" width="20px"
+                        height="20px"></span>
+            </button>
+        </div>
+
+        <div>
+            <h2><a href="#">¿Has olvidado tu contraseña?</a></h2>
+        </div>
+        <button type="submit">Iniciar sesion</button>
+    </form>
+
+    <!-- Footer -->
+    <footer id="footer">
+
+        <div class="seccionesFooter">
+            <div class="informacionYRedes">
+                <img src="../Assets/img/cooperativas-vector-logo.png" alt="logoCooperativa" height="60px"
+                    width="60px">
+                <p>Más que una cooperativa, una comunidad<span class="espacio">comprometida con el desarrollo de
+                        nuestros</span>socios y el bienestar colectivo.</p>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank"><img src="../Assets/img/logoFacebook.svg"
+                                alt="Facebook" width="30px" height="30px"></a></li>
+                    <li><a href="https://instagram.com" target="_blank"><img src="../Assets/img/logoInstagram.svg"
+                                alt="Instagram" width="30px" height="30px"></a></li>
+                    <li><a href="https://x.com" target="_blank"><img src="../Assets/img/logoX.svg" alt="X"
+                                width="30px" height="30px"></a></li>
+                </ul>
+
+            </div>
+
+            <div class="contactoFooter">
+                <h2>Contacto</h2>
+                <ul>
+                    <li><span><img src="../Assets/img/correo.svg" alt="Correo" width="25px" height="25px"></span>
+                        E-Mail:
+                        correo@correo.com</li>
+                    <li><span><img src="../Assets/img/telefono.svg" alt="Telefono" width="25px"
+                                height="25px"></span>Telefono: +598 99 123 456</li>
+                    <li><span><img src="../Assets/img/casa.svg" alt="Local" width="25px"
+                                height="25px"></span>Sucursal:
+                        Calle ficticia S86 M95</li>
+                </ul>
+            </div>
+        </div>
+        <div class="derechosReservados">
+            <p>PLP Tech 2025 todos los derechos reservados</p>
+        </div>
+
+    </footer>
+    <script>
+        //Funcion para mostrar la contrasenia que se esta escribiendo 
+        function mostrarPassLogin(idBoton, idCampo, idIcono) {
+            const boton = document.getElementById(idBoton);
+            const campo = document.getElementById(idCampo);
+            const icono = document.getElementById(idIcono);
+
+            boton.addEventListener('click', function () {
+                campo.type = campo.type === 'password' ? 'text' : 'password';
+                icono.src = campo.type === 'password' ? '../Assets/img/ojoCerrado.svg' : '../Assets/img/ojoAbiertoo.svg';
+            });
+        }
+
+        mostrarPassLogin('mostrarPassLogin', 'usr_pass_login', 'iconoOjoPass');
+    </script>
+    <script src="../../Assets/js/login.js"></script>
 </body>
+
 </html>
